@@ -1,0 +1,1 @@
+# WISE2017_SWI-Prolog
