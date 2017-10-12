@@ -39,8 +39,6 @@ mother(M, C) :- female(M), parent(M, C).
  * write a predicate ancestor/2 with its first argument for the
  * ancestor and its second for its descendant
  */
-
-
-
-
-
+ancestor(A, D) :- parent(A, D).
+ancestor(A, D) :- parent(X, D),
+    ancestor(A, X).
