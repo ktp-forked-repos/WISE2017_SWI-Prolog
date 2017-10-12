@@ -1,0 +1,28 @@
+/**
+ * create sheep database
+ */
+
+/* entities */
+
+sheep(hannes).
+sheep(gunter).
+sheep(willi).
+sheep(theo).
+
+sheep(maria).
+sheep(trude).
+sheep(klara).
+
+
+/* gender */
+
+male(hannes).
+male(gunter).
+male(willi).
+male(theo).
+
+female(maria).
+female(trude).
+female(klara).
+
+
