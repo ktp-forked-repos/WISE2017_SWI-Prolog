@@ -73,3 +73,29 @@ hates('Alberich',X) :- X \= 'Alberich'.
  * loves(X,Y). ->
  * 'Siegfried','Krimhild';'Krimhild','Siegfried';'Gunther','Brunhild
  */
+
+/*
+ * Excercise 4
+ *
+ */
+
+/* inserts element E at position N in list L and returns the result */
+insert_at(E,L,1,[E|L]).
+
+insert_at(E,L,N,R) :-
+    length(L,Le),
+    N > Le,
+    append(L,[E],R),
+    !.
+
+insert_at(E,[H|T],N,[H|Q]) :-
+    N > 1,
+    X is N-1,
+    insert_at(E,T,X,Q).
+
+
+
+
+
+
+
