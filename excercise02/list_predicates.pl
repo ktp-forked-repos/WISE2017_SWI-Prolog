@@ -18,7 +18,10 @@ del_element(E,[E|T],T).
 del_element(E,[S|T],[S|R]) :- del_element(E,T,R).
 
 
-/* (b) check if P is prefix of given list */
+/* (d) check if P is prefix of given list */
 prefix([H|[]],[H|_]).
-prefix([P|T1],[L|T2]) :- [P|T2] = [L|T2],
-    prefix(T1,T2).
+prefix([H|T1],[H|T2]) :- prefix(T1,T2).
+
+
+/* (b) check if I is infix of given list */
+
