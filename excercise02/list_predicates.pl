@@ -24,4 +24,6 @@ prefix([H|T1],[H|T2]) :- prefix(T1,T2).
 
 
 /* (b) check if I is infix of given list */
+infix(I,L) :- prefix(I,L).
+infix(I,[_|T]) :- infix(I,T).
 
