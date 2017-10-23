@@ -45,3 +45,31 @@ flatten([],[]).
 flatten([H|T1], [H|T2]) :- \+ is_a_list(H), flatten(T1,T2).
 flatten([H|T],L) :- flatten(H,L1), flatten(T,L2), append(L1,L2,L).
 
+
+/*
+ * Excercise 3
+ *
+ */
+
+loves('Siegfried','Krimhild').
+loves('Krimhild','Siegfried').
+loves('Gunther','Brunhild').
+
+likes('Siegfried','Gunther').
+likes('Gunther','Krimhild').
+likes('Gunther','Hagen').
+likes('Brunhild',X) :- hates(X,'Siegfried').
+
+hates('Krimhild','Brunhild').
+hates('Brunhild','Siegfried').
+hates('Brunhild','Gunther').
+hates('Brunhild','Krimhild').
+hates('Hagen',X) :- X = 'Siegfried'; loves(X,'Siegfried').
+hates('Alberich',X) :- X \= 'Alberich'.
+
+
+/* loves('Brunhild', X). -> false.
+ * hates(X,'Siegfried'). -> 'Brunhild';'Hagen';'Alberich'.
+ * loves(X,Y). ->
+ * 'Siegfried','Krimhild';'Krimhild','Siegfried';'Gunther','Brunhild
+ */
