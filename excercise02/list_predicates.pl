@@ -1,3 +1,7 @@
+/*
+ * Excercise 1
+ */
+
 /* (a) check if L is list */
 is_a_list([]).
 is_a_list([_|T]) :- is_a_list(T).
@@ -26,4 +30,18 @@ prefix([H|T1],[H|T2]) :- prefix(T1,T2).
 /* (b) check if I is infix of given list */
 infix(I,L) :- prefix(I,L).
 infix(I,[_|T]) :- infix(I,T).
+
+/*
+ * Excercise 2
+ *
+ */
+
+add(E,[],[E]).
+add(E,[H|T],[H|Q]) :- add(E,T,Q).
+
+/* returns a flattend version of a given list */
+
+flatten([],[]).
+flatten([H|T1], [H|T2]) :- \+ is_a_list(H), flatten(T1,T2).
+flatten([H|T],L) :- flatten(H,L1), flatten(T,L2), append(L1,L2,L).
 
