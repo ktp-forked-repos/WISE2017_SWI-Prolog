@@ -27,7 +27,7 @@ parent(klara, maria).
 
 /* write a predicate sheep/1 which is true for all sheeps in this database */
 sheep(X) :- male(X); female(X).
-
+sheep(X) :- sheep(sheep(X)).
 /**
  * write two predicates father/2 and mother/2 with their
  * first argument for the parent and the second for the child
