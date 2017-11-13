@@ -1,0 +1,42 @@
+/* exercise 3 */
+cst(true).
+cst(false).
+is_true(cst(true)).
+is_false(cst(false)).
+not(cst(false)).
+
+
+and(X,Y) :-
+    X = cst(true), Y = cst(true).
+
+or(X,Y) :-
+    X = cst(true); Y = cst(true).
+
+
+is_true(and(X,Y)) :-
+    and(X,Y);
+    (is_true(X), is_true(Y)).
+
+is_true(or(X,Y))  :-
+    or(X,Y);
+    (is_true(X); is_true(Y)).
+
+is_true(not(X))  :-
+    is_false(X).
+
+
+
+is_false(X) :- X = cst(false).
+
+is_false(and(X,Y)) :- (X = cst(false); Y = cst(false));
+     (is_false(X); is_false(Y)).
+
+is_false(or(X,Y))  :- (X = cst(false), Y = cst(false));
+     (is_false(X), is_false(Y)).
+
+is_false(not(X)) :- is_true(X).
+
+
+
+
+
