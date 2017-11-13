@@ -1,9 +1,0 @@
-/* exercise 3 */
-a.
-b.
-or(A,B) :- a;b.
-and(a,) :-a,b.
-not(
-
-
-
